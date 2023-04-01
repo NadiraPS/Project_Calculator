@@ -32,7 +32,6 @@ const operators = document.querySelectorAll(".operator");
 operators.forEach((operator) => {
   operator.addEventListener("click", (event) => {
     inputOperator(event.target.value);
-    // updateScreen(currentNumber);
     updateScreen(calculationOperator);
   });
 });
@@ -74,7 +73,7 @@ const calculate = () => {
   calculationOperator = "";
 };
 
-// code untuk tombol AC berjalan
+// code untuk tombol AC berjalan (menghapus)
 const clearBtn = document.querySelector(".all-clear");
 clearBtn.addEventListener("click", () => {
   clearAll();
@@ -99,3 +98,25 @@ inputDecimal = (dot) => {
   }
   currentNumber += dot;
 };
+
+// code untuk mengkalkulasikan persentase
+const percens = document.querySelector(".percentage");
+inputPercen = (percen) => {
+  if (currentNumber === "0") {
+    return;
+  } else {
+    currentNumber += percen;
+  }
+};
+
+const percentage = percens.addEventListener("click", (event) => {
+  if (currentNumber === "0") {
+    return;
+  } else if (!prevNumber) {
+    currentNumber = currentNumber / 100;
+    updateScreen(currentNumber);
+  } else {
+    currentNumber = currentNumber / 100;
+    updateScreen(currentNumber);
+  }
+});

@@ -35,6 +35,7 @@ button {
   color: #fff;
   width: 25%;
   outline: none;
+  cursor: pointer;
 }
 
 /* tombol AC dan ) itu make 2 kotak, makanya widthnya 50% */
